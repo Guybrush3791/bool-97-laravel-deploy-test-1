@@ -2,8 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route :: get('/', function () {
-    return response() -> json([
-        'message' => 'Hello World!'
-    ], 200);
-});
+use App\Http\Controllers\Api\TestController;
+
+Route :: get('/', [TestController :: class, 'testIndex']);
